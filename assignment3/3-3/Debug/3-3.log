@@ -1,0 +1,6 @@
+﻿  3-3.cpp
+C:\Users\杨烜赫\Desktop\程设\assignment3\3-3\3-3.cpp(65,36): warning C4018: “>”: 有符号/无符号不匹配
+3-3.obj : error LNK2019: 无法解析的外部符号 "unsigned int __cdecl max(int,unsigned int)" (?max@@YAIHI@Z)，函数 "bool __cdecl contains_nearby_almost_duplicate(class std::vector<int,class std::allocator<int> > const &,int,int)" (?contains_nearby_almost_duplicate@@YA_NABV?$vector@HV?$allocator@H@std@@@std@@HH@Z) 中引用了该符号
+    已定义且可能匹配的符号上的提示:
+      "public: static int __cdecl std::numeric_limits<int>::max(void)" (?max@?$numeric_limits@H@std@@SAHXZ)
+C:\Users\杨烜赫\Desktop\程设\assignment3\Debug\3-3.exe : fatal error LNK1120: 1 个无法解析的外部命令

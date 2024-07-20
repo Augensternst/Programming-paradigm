@@ -1,0 +1,3 @@
+﻿  Five_chess_pro.cpp
+C:\Users\杨烜赫\Desktop\程设\Five_chess\Five_chess_pro\Five_chess_pro.cpp(303): warning C4715: “low_ai::exact_chess_point_score”: 不是所有的控件路径都返回值
+  Five_chess_pro.vcxproj -> C:\Users\杨烜赫\Desktop\程设\Five_chess\x64\Debug\Five_chess_pro.exe

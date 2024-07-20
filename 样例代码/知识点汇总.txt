@@ -1,0 +1,93 @@
+1.静态变量 Static Variable.cpp
+2.全局变量 http://blog.csdn.net/jiadebin890724/article/details/40509333
+General Global Variable:
+def1.h
+def1.cpp
+main1.cpp
+Static Global Variable:
+def2.h
+mod2.h
+def2.cpp
+main2.cpp
+3.枚举类型 Enumeration.cpp
+4.内联函数 Inline Function.cpp
+(注：与常规函数不同的是，对于内联函数，编译器将使用相应的函数代码替换函数调用。因此，内联函数的运行速度比常规函数稍快，但代价是需要占用更多内存。)
+5.友元函数 Friend Function.cpp
+(注：编程时滥用友元容易引起数据的安全问题，故需谨慎使用)
+6.深/浅拷贝
+http://blog.csdn.net/lpp0900320123/article/details/39007047
+Object Copy.cpp
+Copy Constructor.cpp
+Deep Copy.cpp
+7.函数指针 http://blog.csdn.net/candyliuxj/article/details/6339414
+Funtion Pointer1.cpp
+8.函数对象 Funtion Object
+http://blog.csdn.net/bonchoix/article/details/8050627
+http://blog.csdn.net/bonchoix/article/details/8054639
+9.泛型算法 Generic Algorithm
+http://blog.csdn.net/wangxu_zju_2010/article/details/7591071
+Generic Algorithm2.cpp
+Generic Algorithm3.cpp
+Generic Algorithm4.cpp
+10.函数适配器
+http://blog.csdn.net/wuzhekai1985/article/details/6658940
+Function Adapter.cpp
+函数指针，函数对象，泛型算法和函数适配器综合：
+http://blog.csdn.net/wuzhekai1985/article/details/6658940
+Funtion Pointer2.cpp
+Funtion Object.cpp
+Generic Algorithm1.cpp
+Funtion Object + Generic Algorithm.cpp
+Function Adapter.cpp
+Function Object(Integrated Example).cpp
+11.运算符重载
+http://blog.csdn.net/dingyuanpu/article/details/5852825
+Operator Overloading1.cpp
+Operator Overloading2.cpp
+Operator Overloading3.cpp
+Operator Overloading4.cpp
+Operator Overloading5.cpp
+12.继承
+http://blog.csdn.net/henren555/article/details/9354035
+Inheritance1.cpp
+Inheritance2.cpp
+Inheritance3.cpp
+Inheritance4.cpp
+Inheritance5.cpp
+Inheritance6.cpp
+Inheritance7.cpp
+Inheritance8.cpp
+Inheritance9.cpp
+Inheritance10.cpp
+Inheritance11.cpp
+Inheritance12.cpp
+Inheritance13.cpp
+13.多态     
+http://blog.csdn.net/hackbuteer1/article/details/7475622
+Polymorphism1.cpp
+Polymorphism2.cpp
+Polymorphism3.cpp
+14.虚函数   
+Virtual Function1.cpp
+Virtual Function2.cpp  
+15.异常处理
+http://www.cnblogs.com/ggjucheng/archive/2011/12/18/2292089.html
+http://blog.csdn.net/xiajun07061225/article/details/8231270
+Exceptions1.cpp
+Exceptions2.cpp
+16.模板     
+http://www.cnblogs.com/gw811/archive/2012/10/25/2738929.html
+Template1.h
+Template1.cpp  
+Template2.h
+Template2.cpp  
+Template3.h
+Template3.cpp  
+Template4.h
+Template4.cpp 
+Template5.h
+Template5.cpp 
+Template6.h
+Template6.cpp 
+Template7.h
+Template7.cpp

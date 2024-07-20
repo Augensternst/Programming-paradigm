@@ -1,0 +1,133 @@
+基本概念： 
+重载：是指同一可访问区内被声明的几个具有不同参数列（参数的类型，个数，顺序不同）的同名函数，根据参数列表确定调用哪个函数，重载不关心函数返回类型。
+
+示例：
+
+class A{
+public:
+  void test(int i);
+  void test(double i);//overload
+  void test(int i, double j);//overload
+  void test(double i, int j);//overload
+  int test(int i);         //错误，非重载。注意重载不关心函数返回类型。
+};
+
+隐藏：是指派生类的函数屏蔽了与其同名的基类函数，注意只要同名函数，不管参数列表是否相同，基类函数都会被隐藏。
+
+示例：
+
+#include <iostream>
+using namespace std;
+
+class Base
+{
+public:
+    void fun(double ,int ){ cout << "Base::fun(double ,int )" << endl; }
+};
+
+class Derive : public Base
+{
+public:
+    void fun(int ){ cout << "Derive::fun(int )" << endl; }
+};
+
+int main()
+{
+    Derive pd;
+    pd.fun(1);//Derive::fun(int )
+    pd.fun(0.01, 1);//error C2660: “Derive::fun”: 函数不接受 2 个参数
+
+    system("pause");
+    return 0;
+}
+
+重写(覆盖)：是指派生类中存在重新定义的函数。其函数名，参数列表，返回值类型，所有都必须同基类中被重写的函数一致。只有函数体不同（花括号内），派生类调用时会调用派生类的重写函数，不会调用被重写函数。重写的基类中被重写的函数必须有virtual修饰。
+
+示例：
+
+#include<iostream>
+
+using namespace std;
+
+class Base
+{
+public:
+    virtual void fun(int i){ cout << "Base::fun(int) : " << i << endl;}
+};
+
+class Derived : public Base
+{
+public:
+    virtual void fun(int i){ cout << "Derived::fun(int) : " << i << endl;}
+};
+int main()
+{
+    Base b;
+    Base * pb = new Derived();
+    pb->fun(3);//Derived::fun(int)
+
+    system("pause");
+    return 0;
+}
+
+重载和重写的区别：
+
+（1）范围区别：重写和被重写的函数在不同的类中，重载和被重载的函数在同一类中。
+
+（2）参数区别：重写与被重写的函数参数列表一定相同，重载和被重载的函数参数列表一定不同。
+
+（3）virtual的区别：重写的基类必须要有virtual修饰，重载函数和被重载函数可以被virtual修饰，也可以没有。
+
+隐藏和重写，重载的区别：
+
+（1）与重载范围不同：隐藏函数和被隐藏函数在不同类中。
+
+（2）参数的区别：隐藏函数和被隐藏函数参数列表可以相同，也可以不同，但函数名一定同；当参数不同时，无论基类中的函数是否被virtual修饰，基类函数都是被隐藏，而不是被重写。 
+示例
+
+#include <iostream>
+
+using namespace std;
+
+class Base
+{
+public:
+    virtual void f(float x){ cout << "Base::f(float) " << x << endl; }
+    void g(float x){ cout << "Base::g(float) " << x << endl; }
+    void h(float x){ cout << "Base::h(float) " << x << endl; }
+};
+
+class Derived : public Base
+{
+public:
+    virtual void f(float x){ cout << "Derived::f(float) " << x << endl; }
+    void g(int x){ cout << "Derived::g(int) " << x << endl; }
+    void h(float x){ cout << "Derived::h(float) " << x << endl; }
+};
+
+int main(void)
+{
+    Derived d;
+    Base *pb = &d;
+    Derived *pd = &d;
+    // Good : behavior depends solely on type of the object
+    pb->f(3.14f); //Derived::f(float) 3.14
+    pd->f(3.14f); //Derived::f(float) 3.14
+
+    // Bad : behavior depends on type of the pointer
+    pb->g(3.14f); //Base::g(float) 3.14
+    pd->g(3.14f); //Derived::g(int) 3
+
+    // Bad : behavior depends on type of the pointer
+    pb->h(3.14f); //Base::h(float) 3.14
+    pd->h(3.14f); //Derived::h(float) 3.14
+
+    system("pause");
+    return 0;
+}
+
+（1）函数Derived::f(float)覆盖了Base::f(float)。
+
+（2）函数Derived::g(int)隐藏了Base::g(float)，而不是重载。
+
+（3）函数Derived::h(float)隐藏了Base::h(float)，而不是覆盖。
